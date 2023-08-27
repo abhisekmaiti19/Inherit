@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
 	Stack,
 	TabPanel,
@@ -7,7 +8,7 @@ import TableFlex from './TableFlex';
 import { useContext } from 'react';
 import DashboardContext from '../../Store/DashboardContext';
 
-const NewEnrollments = () => {
+const Accepted = ({isAccepted = true}) => {
 	const {enrollments} = useContext(DashboardContext);
 
 	const headings = [
@@ -19,7 +20,6 @@ const NewEnrollments = () => {
 			'College',
 			'CourseType',
 			'Experience',
-			'Resume',
 	];
 
 	return (
@@ -32,8 +32,8 @@ const NewEnrollments = () => {
 			>
 				<FilterStudents />
 			</Stack>
-			<TableFlex headings={headings} data={
-				enrollments.filter(e=>e.isShortlistedForExam==null).map((enrollment)=>{return {
+			<TableFlex caption={isAccepted?'Accepted Candidatures (All Batches)': 'Rejected Candidatures (All Batches)'} headings={headings} data={
+				enrollments.filter(e=>(e.isAccepted==isAccepted)).map((enrollment)=>{return {
 					'FAID': enrollment._id,
 					'Name': enrollment.user.name,
 					'Course': enrollment.courseName,
@@ -42,17 +42,15 @@ const NewEnrollments = () => {
 					'College': enrollment.user.college,
 					'CourseType': enrollment.user.course,
 					'Experience': enrollment.user.experience,
-					'Resume': enrollment.user.resume,
-					'userId': enrollment.userId, 
-					'batchId': enrollment.batchId, 
 				}})
-			} 
-			hasFunction={true}
-			acceptOption={{key: 'isShortlistedForExam', value: 'true'}}
-			declineOption={{key:'isShortlistedForExam', value: 'false'}}
+			}
 			/>
 		</TabPanel>
 	);
 };
 
-export default NewEnrollments;
+export default Accepted;
+
+
+
+

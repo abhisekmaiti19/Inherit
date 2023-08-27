@@ -22,6 +22,7 @@ const Dashboard = () => {
 		<Stack
 			w={'100%'}
 			h={'100%'}
+			overflow={'hidden'}
 			align={'top'}
 			direction={{ base: 'column-reverse', md: 'row' }}
 			gap={0}

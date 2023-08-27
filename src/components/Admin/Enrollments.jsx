@@ -3,7 +3,6 @@ import {
 	Show,
 	Tab,
 	TabList,
-	TabPanel,
 	TabPanels,
 	Tabs,
 } from '@chakra-ui/react';
@@ -11,8 +10,19 @@ import { BiBlock, BiSolidUserVoice } from 'react-icons/bi';
 import { BsFillClipboard2CheckFill, BsFillPatchCheckFill} from 'react-icons/bs';
 import { FaLaptopCode } from 'react-icons/fa';
 import NewEnrollments from './NewEnrollments';
+import { useContext, useEffect } from 'react';
+import DashboardContext from '../../Store/DashboardContext';
+import FAEETest from './FAEETest';
+import Interview from './Interview';
+import Accepted from './Accepted';
 
 const Enrollments = () => {
+	const {getEnrollments} = useContext(DashboardContext);
+
+	useEffect(()=>{
+		getEnrollments();
+	},[]);
+
 	return (
 		<Tabs isLazy colorScheme="brand">
 			<TabList>
@@ -82,9 +92,10 @@ const Enrollments = () => {
 			
 			<TabPanels>
 				<NewEnrollments />
-				<TabPanel>
-					<p>two!</p>
-				</TabPanel>
+				<FAEETest />
+				<Interview />
+				<Accepted />
+				<Accepted isAccepted={false} />
 			</TabPanels>
 		</Tabs>
 	);

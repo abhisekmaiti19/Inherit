@@ -15,51 +15,123 @@ import {
 	Stepper,
 	Text,
 } from '@chakra-ui/react';
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link as LinkRouter } from 'react-router-dom';
 import { BsOption } from 'react-icons/bs';
-
-
-const data = [
-    {
-        title: 'Application Submission',
-        complete: true,
-        body: [
-            {
-                title: 'You Have Successfully applied for Java Fullstack Developer Course',
-                status: 'green',
-            },
-        ],
-    },
-    {
-        title: 'Admission Test',
-        complete: true,
-        body: [
-            {
-                title: 'Your application is shortlisted for Java Fullstack Developer Course',
-                status: 'green',
-            },
-            {
-                linkUrl: 'https://google.com',
-                linkTitle: 'Join',
-                title: 'Complete test',
-                description: 'Deadline: 30th Aug, 2023 12:00PM',
-            },
-        ],
-    },
-    {
-        title: 'Waiting for the next steps',
-        description: 'One-on-One Interview',
-        complete: false,
-    },
-]
-
-//const data = [];
+import DashboardContext from '../Store/DashboardContext';
 
 const ApplicationStatus = () => {
-	const [steps] = useState(data);
+	const {getApplicationStatus} = useContext(DashboardContext);
+	const [steps, setSteps] = useState([]);
 
-	const [step] = useState(steps.filter((s) => s.complete).length);
+	const setApplicationSteps = async()=>{
+		const res = await getApplicationStatus();
+		if (res!==null) {
+			const data = [];
+
+			data.push({
+				title: 'Application Submission',
+				complete: true,
+				body: [
+					{
+						title: `You Have Successfully applied for ${res?.courseName} Course`,
+						status: 'green',
+					},
+				],
+			});
+
+			if(res.isShortlistedForExam!==null){
+				let sub = {
+					title: 'Admission Test',
+					complete: true,
+					body: [
+						{
+							title: `Your application is ${res.isShortlistedForExam?'':'not'} shortlisted for ${res?.courseName} Course`,
+							status: res.isShortlistedForExam?'green':'red',
+						},
+					],
+				};
+				if(res.examLink)
+					sub.body.push({
+						linkUrl: res.examLink.split('#')[0],
+						linkTitle: 'Test Link',
+						title: 'Complete test',
+						description: res.examLink.split('#')[1],
+					})
+				data.push(sub)
+			} else {
+				data.push({
+					title: 'Waiting for the next steps',
+					description: 'Admission Test',
+					complete: false
+				})
+				setSteps(data);
+				return
+			}
+			if(res.isShortlistedForInterview!==null){
+				let sub = {
+					title: 'Interview',
+					complete: true,
+					body: [
+						{
+							title: `Your application is ${res.isShortlistedForInterview?'':'not'} shortlisted for Interview`,
+							status: res.isShortlistedForInterview?'green':'red',
+						},
+					],
+				};
+				if(res.interviewLink)
+					sub.body.push({
+						linkUrl: res.interviewLink.split('#')[0],
+						linkTitle: 'Join',
+						title: 'Interview is Scheduled',
+						description: res.interviewLink.split('#')[1],
+					})
+				data.push(sub)
+			} else {
+				data.push({
+					title: 'Waiting for the next steps',
+					description: 'Interview',
+					complete: false
+				})
+				setSteps(data);
+				return
+			}
+			if(res.isAccepted!==null){
+				let sub = {
+					title: 'Selection Results',
+					complete: true,
+					body: [
+						{
+							title: `Your application is ${res.isAccepted?'':'not'} Selected`,
+							status: res.isAccepted?'green':'red',
+						},
+					],
+				};
+				data.push(sub)
+			} else {
+				data.push({
+					title: 'Waiting for the next steps',
+					description: 'Selection Results',
+					complete: false
+				})
+				setSteps(data);
+				return
+			}
+
+			if(!res.isShortlistedForExam || !res.isShortlistedForInterview || !res.isAccepted) {
+				data.push({
+					title: `Candidature Rejected`,
+					complete: true,
+				})
+			}
+
+			setSteps(data);
+		}
+	}
+
+	useEffect(()=>{
+		setApplicationSteps();
+	}, []);
 
 	return (
 		<Stack direction={'column'} w={'100%'}>
@@ -68,6 +140,7 @@ const ApplicationStatus = () => {
 					display={'flex'}
 					flexDir="column"
 					h={'100%'}
+					py={10}
 					gap={15}
 					border={'1px dotted'}
 					borderColor={'brand.200'}
@@ -103,7 +176,7 @@ const ApplicationStatus = () => {
 				</Center>
 			)}
 			<Stepper
-				index={step}
+				index={steps.filter((s) => s.complete).length}
 				orientation="vertical"
 				minH="200px"
 				w={'100%'}

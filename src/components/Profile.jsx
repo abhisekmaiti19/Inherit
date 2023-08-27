@@ -38,15 +38,16 @@ const Profile = () => {
 		<Stack direction={'column'} w={'100%'}>
 			<Stepper
 				index={stepIndex}
-				border={'3px solid'}
-				borderColor={'brand.300'}
+				border={'2px solid'}
+				borderColor={'#bdd2e3'}
 				p={[3,5,5]}
 				borderRadius={10}
 				colorScheme="brand"
 			>
 				{steps.map((step, index) => (
 					<Step key={index}>
-						<StepIndicator>
+						<StepIndicator
+						>
 							<StepStatus
 								complete={<StepIcon />}
 								incomplete={<StepNumber />}
@@ -58,7 +59,7 @@ const Profile = () => {
 								<StepTitle>{step}</StepTitle>
 							</Box>
 						</Show>
-						<StepSeparator />
+						<StepSeparator style={{background: '#bdd2e3'}}/>
 					</Step>
 				))}
 			</Stepper>

@@ -2,7 +2,7 @@ import { Box, HStack, Hide, Image, Show, Text } from '@chakra-ui/react';
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-import img from '../assets/fynd_logo1.png';
+// import img from '../assets/fynd_logo1.png';
 import UserProfileButton from './UserProfileButton';
 import ApplyButton from './ApplyButton';
 import AppDrawer from './AppDrawer';
@@ -94,7 +94,7 @@ const Navbar = () => {
 				</Show>
 				<Link to={'/'}>
 				<Image
-					src={img}
+					
 					transition={'0.25s'}
 					alt="Brand Icon"
 					w={{md: isLoginPage ? '94px' : '85px', base: isLoginPage ? '94px' : '72px'}}

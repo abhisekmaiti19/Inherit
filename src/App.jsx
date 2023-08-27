@@ -1,23 +1,18 @@
 import { Route, Routes } from 'react-router-dom';
+import { Box, VStack } from '@chakra-ui/react';
+
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
 import Signup from './pages/Signup';
-import { Box, VStack } from '@chakra-ui/react';
 import Dashboard from './pages/Dashboard';
 import Profile from './components/Profile';
 import ApplicationStatus from './components/ApplicationStatus';
 import EnrolledCourse from './components/EnrolledCourse';
 import Enrollments from './components/Admin/Enrollments';
-import { useContext, useEffect } from 'react';
-import GlobalContext from './Store/GlobalContext';
+import Batches from './components/Admin/Batches';
 
 function App() {
-	const {checkLoginStatus} = useContext(GlobalContext);
-	
-	useEffect(()=>{
-		checkLoginStatus();
-	}, []);
 	return (
 		<>
 			<VStack
@@ -38,6 +33,7 @@ function App() {
 							<Route path="application-status" element={<ApplicationStatus />} />
 							<Route path="enrolled-course" element={<EnrolledCourse />} />
 							<Route path="enrollments" element={<Enrollments />} />
+							<Route path="batches" element={<Batches />} />
 						</Route>
 					</Routes>
 				</Box>
