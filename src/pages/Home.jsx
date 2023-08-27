@@ -11,6 +11,8 @@ import {
 } from '@chakra-ui/react';
 import { useContext } from 'react';
 import GlobalContext from '../Store/GlobalContext';
+import Hero from '../components/sections/hero';
+import cuate from '../assets/signin-banner.png'
 
 const Home = () => {
 	const { batches, applyCourse } = useContext(GlobalContext);
@@ -38,7 +40,17 @@ const Home = () => {
 
 	return (
 		<>
-			<Center
+			
+			
+      <Hero
+        title="From Fresher To An Industry Ready Professional"
+        subtitle="Learn, practice & master the knowledge and skills of your industry with live projects, guided mentorship & hands-on training. You work with the latest tech and get a chance to be a permanent employee!"
+        image={cuate}
+        ctaText="Create your account now"
+        ctaLink="/signup"
+      />
+
+<Center
 				flexDirection={'column'}
 				gap={5}
 				px={{ base: 5, md: 10, lg: 20, xl: 40 }}
@@ -87,7 +99,7 @@ const Home = () => {
 			
 			
 			</Center>
-
+    
 			
 		</>
 	);

@@ -1,4 +1,4 @@
-import { Box, HStack, Hide, Image, Show, Text } from '@chakra-ui/react';
+import { Box, HStack, Hide, Show, Text } from '@chakra-ui/react';
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import UserProfileButton from './UserProfileButton';
 import ApplyButton from './ApplyButton';
 import AppDrawer from './AppDrawer';
+// import { Heading } from '@chakra-ui/react'
 
 const Navbar = () => {
 	const location = useLocation();
@@ -92,21 +93,9 @@ const Navbar = () => {
 						</Text>
 					</HStack>
 				</Show>
-				<Link to={'/'}>
-				<Image
-					
-					transition={'0.25s'}
-					alt="Brand Icon"
-					w={{md: isLoginPage ? '94px' : '85px', base: isLoginPage ? '94px' : '72px'}}
-					position={'absolute'}
-					zIndex={2}
-					top={isLoginPage ? '-2px' : '3px'}
-					left={{ xl: '50%', base: '10px' }}
-					transform={{
-						xl: 'translate(-50%, 0)',
-						md: 'translate(0, 0)',
-					}}
-				/></Link>
+				{/* <Link to={'/'}>
+					<Heading>Inherit</Heading>
+				</Link> */}
 				<HStack spacing={7} justify={'flex-end'}>
 					<UserProfileButton />
 					<Show above="sm">
