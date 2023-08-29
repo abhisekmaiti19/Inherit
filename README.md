@@ -16,14 +16,22 @@ Credentials:<br>
 
 <h2>Project Screenshots:</h2>
 
-<img src="./src/assets/Screenshot (361).png" alt="inherit" width="600" >
-<img src="./src/assets/Screenshot (367).png" alt="inherit" width="600" >
-<img src="./src/assets/Screenshot (370).png" alt="inherit" width="600" >
-<img src="./src/assets/Screenshot (371).png" alt="inherit" width="600" >
-<img src="./src/assets/Screenshot (374).png" alt="inherit" width="600" >
-<img src="./src/assets/Screenshot (376).png" alt="inherit" width="600" >
-<img src="./src/assets/Screenshot (377).png" alt="inherit" width="600" >
-<img src="./src/assets/Screenshot (378).png" alt="inherit" width="600" >
+<p>Sign in/ Signup Page</p>
+<img src="./src/assets/Screenshot (361).png" alt="inherit" width="800" >
+<p>Normal User Dashboard</p>
+<img src="./src/assets/Screenshot (367).png" alt="inherit" width="800" >
+<p>Application status page - If you apply for any course</p>
+<img src="./src/assets/Screenshot (370).png" alt="inherit" width="800" >
+<p>Courses Page</p>
+<img src="./src/assets/Screenshot (371).png" alt="inherit" width="800" >
+<p>Applied Course status</p>
+<img src="./src/assets/Screenshot (374).png" alt="inherit" width="800" >
+<img src="./src/assets/Screenshot (381).png" alt="inherit" width="800" >
+<p>Admin Dashboard/ Create new Batch</p>
+<img src="./src/assets/Screenshot (376).png" alt="inherit" width="800" >
+<p>Tracking Application at multiple steps (Send Interview link, tect link etc)</p>
+<img src="./src/assets/Screenshot (377).png" alt="inherit" width="800" >
+<img src="./src/assets/Screenshot (378).png" alt="inherit" width="800" >
 
 <h2>🧐 Features</h2>
 
