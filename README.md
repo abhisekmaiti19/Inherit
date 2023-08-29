@@ -9,17 +9,21 @@
 <h2>🚀 Demo</h2>
 
 [https://inherit.netlify.app](https://inherit.netlify.app)
+Credentials:<br>
+
+- Username - admin@admin.com
+- Pass - 123456
 
 <h2>Project Screenshots:</h2>
 
-<img src="./src/assets/Screenshot (361).png" alt="inherit" width="400" >
-<img src="./src/assets/Screenshot (367).png" alt="inherit" width="400" >
-<img src="./src/assets/Screenshot (370).png" alt="inherit" width="400" >
-<img src="./src/assets/Screenshot (371).png" alt="inherit" width="400" >
-<img src="./src/assets/Screenshot (374).png" alt="inherit" width="400" >
-<img src="./src/assets/Screenshot (376).png" alt="inherit" width="400" >
-<img src="./src/assets/Screenshot (377).png" alt="inherit" width="400" >
-<img src="./src/assets/Screenshot (378).png" alt="inherit" width="400" >
+<img src="./src/assets/Screenshot (361).png" alt="inherit" width="600" >
+<img src="./src/assets/Screenshot (367).png" alt="inherit" width="600" >
+<img src="./src/assets/Screenshot (370).png" alt="inherit" width="600" >
+<img src="./src/assets/Screenshot (371).png" alt="inherit" width="600" >
+<img src="./src/assets/Screenshot (374).png" alt="inherit" width="600" >
+<img src="./src/assets/Screenshot (376).png" alt="inherit" width="600" >
+<img src="./src/assets/Screenshot (377).png" alt="inherit" width="600" >
+<img src="./src/assets/Screenshot (378).png" alt="inherit" width="600" >
 
 <h2>🧐 Features</h2>
 
