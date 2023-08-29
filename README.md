@@ -11,6 +11,7 @@
 [https://inherit.netlify.app](https://inherit.netlify.app)
 Credentials:<br>
 
+- for the first time website may response slowly as we hosted at a free service this issue occurred from their side
 - Username - admin@admin.com
 - Pass - 123456
 
@@ -30,7 +31,6 @@ Credentials:<br>
 <p>Admin Dashboard/ Create new Batch</p>
 <img src="./src/assets/Screenshot (376).png" alt="inherit" width="800" >
 <p>Tracking Application at multiple steps (Send Interview link, tect link etc)</p>
-<img src="./src/assets/Screenshot (377).png" alt="inherit" width="800" >
 <img src="./src/assets/Screenshot (378).png" alt="inherit" width="800" >
 
 <h2>🧐 Features</h2>
