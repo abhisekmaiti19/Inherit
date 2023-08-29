@@ -1,4 +1,4 @@
-<h1 align="center" id="title">Inherit</h1>
+<h1 align="center" id="title">Inherit - End-to-End Application Management Platform</h1>
 
 <p align="center"><img src="https://socialify.git.ci/abhisekmaiti19/inherit/image?description=1&amp;descriptionEditable=End-to-End%20Application%20Management%20Platform&amp;logo=https%3A%2F%2Fwww.bytestechnolab.com%2Fwp-content%2Fuploads%2F2022%2F02%2FMern-Stack.png&amp;name=1&amp;owner=1&amp;pattern=Circuit%20Board&amp;stargazers=1&amp;theme=Light" alt="project-image"></p>
 
@@ -13,6 +13,13 @@
 <h2>Project Screenshots:</h2>
 
 <img src="./src/assets/Screenshot (361).png" alt="inherit" width="400" >
+<img src="./src/assets/Screenshot (367).png" alt="inherit" width="400" >
+<img src="./src/assets/Screenshot (370).png" alt="inherit" width="400" >
+<img src="./src/assets/Screenshot (371).png" alt="inherit" width="400" >
+<img src="./src/assets/Screenshot (374).png" alt="inherit" width="400" >
+<img src="./src/assets/Screenshot (376).png" alt="inherit" width="400" >
+<img src="./src/assets/Screenshot (377).png" alt="inherit" width="400" >
+<img src="./src/assets/Screenshot (378).png" alt="inherit" width="400" >
 
 <h2>🧐 Features</h2>
 
@@ -40,6 +47,26 @@ npm install
 
 ```
 npm run dev
+```
+
+<h2>🎲 Backend Repo and Server:</h2>
+
+<p>Repo link (If you want to see the backend code | server is already hosted at https://inheritbackend.onrender.com) </p>
+
+```
+https://github.com/abhisekmaiti19/Inherit_DB
+```
+
+<p>Clone the project and  run</p>
+
+```
+npm clone https://github.com/abhisekmaiti19/Inherit_DB
+```
+
+<p>Run the project</p>
+
+```
+npm run server
 ```
 
 <h2>🍰 Contribution Guidelines:</h2>
